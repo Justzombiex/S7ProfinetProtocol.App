@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35312.102
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S7ProfinetProtocol", "S7ProfinetProtocol\S7ProfinetProtocol.csproj", "{0F381C30-6699-48AA-BA4A-CEB982EB4513}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "S7Profinet.Implementation", "S7Profinet.Implementation\S7Profinet.Implementation.csproj", "{A522235A-F6FC-472E-A300-675480FE41E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F381C30-6699-48AA-BA4A-CEB982EB4513}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F381C30-6699-48AA-BA4A-CEB982EB4513}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F381C30-6699-48AA-BA4A-CEB982EB4513}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F381C30-6699-48AA-BA4A-CEB982EB4513}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A522235A-F6FC-472E-A300-675480FE41E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A522235A-F6FC-472E-A300-675480FE41E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A522235A-F6FC-472E-A300-675480FE41E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A522235A-F6FC-472E-A300-675480FE41E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3A5D33FC-57D7-44A4-A691-891CBC5E8DFE}
+	EndGlobalSection
+EndGlobal
