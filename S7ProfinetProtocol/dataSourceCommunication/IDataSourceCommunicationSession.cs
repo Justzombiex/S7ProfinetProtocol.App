@@ -44,6 +44,6 @@ namespace S7Profinet.Implementacion.dataSourceCommunication
         public void ReadValues(Node node, out DataValue dataValue);
 
         //TODO: Por definir 
-        public void WriteValues(DataValue dataValue, out Result results);
+        public void WriteValues(List<Node> nodes, List<DataValue> dataValues, out Result results);
     }
 }
