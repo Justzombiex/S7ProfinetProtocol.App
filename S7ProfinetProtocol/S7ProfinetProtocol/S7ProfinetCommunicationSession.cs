@@ -14,11 +14,22 @@ namespace S7ProfinetProtocol.S7ProfinetProtocol
 {
     public class S7ProfinetCommunicationSession : IDataSourceCommunicationSession
     {
+        /// <summary>
+        /// Cliente de la sesión
+        /// </summary>
         private Plc Plc;
 
-        public Guid DataSourceId => throw new NotImplementedException();
+        /// <summary>
+        /// Identificador de la fuente de datos a la cual pertenece la sesión.
+        /// </summary>
+        public Guid DataSourceId { get; }
 
-        public Guid SessionId => throw new NotImplementedException();
+        public Guid SessionId { get; }
+
+        /// <summary>
+        /// Manejador de tareas de la sesión
+        /// </summary>
+        private TaskManager TaskManager;
 
         /// <summary>
         /// Constructor de S7ProfinetCommunicationSession
@@ -27,14 +38,24 @@ namespace S7ProfinetProtocol.S7ProfinetProtocol
         /// <param name="ip">Especifica la dirección IP de la CPU o de la tarjeta Ethernet externa</param>
         /// <param name="rack">Contiene el rack del plc, que puedes encontrar en configuración de hardware</param>
         /// <param name="slot">Esta es la ranura de la CPU, que puedes encontrar en la configuración de hardware.</param>
-        public S7ProfinetCommunicationSession(CpuType cpuType, string ip, short rack, short slot)
+        /// <param name="dataSourceId">Identificador de la fuente dde datos a la cual pertenece la sesión</param>
+        public S7ProfinetCommunicationSession(CpuType cpuType, string ip, short rack, short slot, Guid dataSourceId)
         {
             Plc plc = new Plc(cpuType, ip, rack, slot);
+
+            DataSourceId = dataSourceId;
+
+            SessionId = Guid.NewGuid();
         }
 
         public void AddSuscription(Node node, object clientHandle, valueChanged callback, out object serverHandle)
         {
-            throw new NotImplementedException();
+            if (TaskManager == null)
+            {
+                TaskManager = new TaskManager(Plc);
+            }
+
+            TaskManager.AddNodes(node, callback, out serverHandle);
         }
 
         public Result Browse()
